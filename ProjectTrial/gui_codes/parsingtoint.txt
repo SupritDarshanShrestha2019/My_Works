@@ -1,0 +1,36 @@
+package com.javatutorialhq.tutorial;
+
+import java.util.Scanner;
+
+/*
+ * This sample code shows how to convert a String input to Integer type
+ * Java tutorial with example source code
+ */
+public class StringToInteger {
+
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		System.out.println("Enter the dimensions of a rectangle");
+		System.out.print("L:");
+		Scanner s = new Scanner(System.in);
+		try{
+			// convert the string read from the scanner into Integer type
+			Integer length = Integer.parseInt(s.nextLine());
+			System.out.print("W:");
+			s = new Scanner(System.in);
+			Integer width = Integer.parseInt(s.nextLine());
+			// Printing the area of rectangle
+			System.out.println("Area of rectangle:"+width*length);
+		}
+		catch(NumberFormatException ne){
+			System.out.println("Invalid Input");
+		}
+		finally{
+			s.close();
+		}
+
+	}
+
+}
+
+[/sourcecode]

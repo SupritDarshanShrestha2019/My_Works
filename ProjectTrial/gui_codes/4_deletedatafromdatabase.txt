@@ -1,0 +1,24 @@
+Delete all records from database
+try{
+         Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/register","cc","cc");
+// register is the database name
+            System.out.println("connected");
+            String sql = "Delete from record";
+//record is the table name in the database
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.executeUpdate();
+
+	    st.close();
+	    conn.close();
+          
+        }
+        catch(SQLException e){
+            System.out.println(e);
+        }
+
+
+
+
+
+To Exit a form
+System.exit(0);

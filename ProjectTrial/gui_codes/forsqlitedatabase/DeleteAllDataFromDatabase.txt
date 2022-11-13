@@ -1,0 +1,19 @@
+
+//this code will delete all the data from the database
+
+try{
+         Connection conn = DriverManager.getConnection("jdbc:sqlite:D:\\alldatabasefiles\\school.db");
+         System.out.println("connection successful");
+            
+            String sql = "Delete from students";
+
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.executeUpdate();
+
+	    st.close();
+	    conn.close();
+          
+        }
+        catch(SQLException e){
+            System.out.println(e);
+        }

@@ -1,0 +1,27 @@
+try {
+            // this is the database connection
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:D:\\alldatabasefiles\\school.db");
+            System.out.println("connection successful");
+            
+	   // this is the preparation and execution of the sql statement
+	   //the line below will search anything  according to the name, roll, address provided in the text box
+         
+            PreparedStatement st = conn.prepareStatement("Select * from students where name = (?) or roll =(?) or address =(?)");
+          
+            String searchData = jTextField4.getText(); 
+            st.setString(1,searchData);
+            st.setString(2, searchData);
+            st.setString(3,searchData);
+            
+            ResultSet rs = st.executeQuery();
+             
+	   //line below displays data in the jtable
+	    jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+	
+	//close the statement and connection at the end 
+             st.close();
+            conn.close();
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null,ex);
+        }

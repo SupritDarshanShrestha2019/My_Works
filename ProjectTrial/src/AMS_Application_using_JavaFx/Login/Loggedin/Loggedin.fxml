@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AMS_Application_using_JavaFx.Login.Loggedin.LoggedinController">
+   <children>
+      <Button layoutX="88.0" layoutY="62.0" mnemonicParsing="false" onAction="#deposit" text="Deposit" />
+      <Button layoutX="88.0" layoutY="107.0" mnemonicParsing="false" onAction="#withdraw" text="Withdraw" />
+      <Button layoutX="88.0" layoutY="149.0" mnemonicParsing="false" onAction="#accountDetails" text="Details Show" />
+      <Button layoutX="90.0" layoutY="188.0" mnemonicParsing="false" onAction="#transactionShow" text="Transaction Show" />
+      <Button layoutX="509.0" layoutY="31.0" mnemonicParsing="false" onAction="#returnBack" text="Log out" />
+   </children>
+</AnchorPane>

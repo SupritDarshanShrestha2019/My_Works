@@ -1,0 +1,36 @@
+//import this at the top of your program file
+import java.sql.*;
+
+
+{
+            //using this command, we have tried to make connection with the database..database address might be different in your 	   //program
+
+             Connection conn = DriverManager.getConnection("jdbc:sqlite:D:\\alldatabasefiles\\school.db");
+	     System.out.println("connection successful");
+             
+	    // input values from the frame itself
+            String rollx = jTextField1.getText();
+            String namex = jTextField2.getText();
+            String addressx = jTextField3.getText();
+
+            //now prepare to send the data to the database
+            PreparedStatement st = conn.prepareStatement("Insert into students(roll,name,address) values (?,?,?)");
+            st.setString(1, rollx);
+            st.setString(2, namex);
+            st.setString(3, addressx);
+            int datagone = st.executeUpdate();
+
+
+            if (datagone>0){
+            JOptionPane.showMessageDialog(null,"data inserted");
+            }
+            else{
+                 JOptionPane.showMessageDialog(null,"error in insertion");
+            }    
+		//close the connection at the end
+		conn.close();
+        }
+        catch(Exception e)
+        {
+        JOptionPane.showMessageDialog(null, e);
+        }     

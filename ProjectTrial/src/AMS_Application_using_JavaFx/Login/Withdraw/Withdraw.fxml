@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AMS_Application_using_JavaFx.Login.Withdraw.WithdrawController">
+   <children>
+      <Button layoutX="323.0" layoutY="246.0" mnemonicParsing="false" onAction="#submitForm" text="Withdraw" />
+      <TextField fx:id="amountTxt" layoutX="226.0" layoutY="188.0" />
+      <Label layoutX="137.0" layoutY="192.0" text="Enter amount" />
+      <Label fx:id="status" layoutX="112.0" layoutY="73.0" prefHeight="17.0" prefWidth="338.0" />
+      <Button layoutX="226.0" layoutY="246.0" mnemonicParsing="false" onAction="#returnBack" text="Return" />
+   </children>
+</AnchorPane>

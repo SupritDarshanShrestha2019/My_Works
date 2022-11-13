@@ -1,0 +1,32 @@
+//step 1: add rs2xml.jar into your library
+//step 2: import this at the top of your program file
+import net.proteanit.sql.DbUtils;
+
+// Write this code inside your button
+try {
+            // this is the database connection
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:D:\\alldatabasefiles\\school.db");
+            System.out.println("connection successful");
+            
+	   // this is the preparation and execution of the sql statement
+            String sql = "Select * from students";
+            PreparedStatement st = conn.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            
+	// this will print all the values from the database table to your jtable
+            while(rs.next())
+            {
+		//this is required only if you want to print data in a console
+                //System.out.println(rs.getString(1)+ " "+rs.getString(2) + " " +rs.getString(3));
+                
+		jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+
+            }
+
+	//close the statement and connection at the end 
+            st.close();
+            conn.close();
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null,ex);
+        }

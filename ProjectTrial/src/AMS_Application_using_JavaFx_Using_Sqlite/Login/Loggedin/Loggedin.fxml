@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AMS_Application_using_JavaFx_Using_Sqlite.Login.Loggedin.LoggedinController">
+   <children>
+      <Button layoutX="253.0" layoutY="62.0" mnemonicParsing="false" onAction="#deposit" text="Deposit">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="245.0" layoutY="134.0" mnemonicParsing="false" onAction="#withdraw" text="Withdraw">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="230.0" layoutY="211.0" mnemonicParsing="false" onAction="#accountDetails" text="Details Show">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="210.0" layoutY="281.0" mnemonicParsing="false" onAction="#transactionShow" text="Transaction Show">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="499.0" layoutY="350.0" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,33 @@
+try{
+         Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/allrecords", "a", "a");
+// register is the database name
+            System.out.println("connected");
+            
+            
+            
+//record is the table name in the database
+            
+           
+            
+            int input;
+            input = JOptionPane.showConfirmDialog(null,"Do you want to delete all records");
+            
+            
+            System.out.print(input);
+            
+            if (input == 0){
+                  
+                //codes to delete data
+               String sql = "Delete from student";
+               PreparedStatement st = conn.prepareStatement(sql);
+               st.executeUpdate();
+               st.close();
+	       conn.close();
+               JOptionPane.showMessageDialog(null, "All data deleted from database !!");
+            }
+	    
+          
+        }
+        catch(SQLException e){
+            System.out.println(e);
+        }

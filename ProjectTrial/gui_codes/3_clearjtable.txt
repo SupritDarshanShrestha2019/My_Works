@@ -1,0 +1,9 @@
+############Code to Clear Jtable###########
+
+//import this package first
+import javax.swing.table.DefaultTableModel;
+
+
+DefaultTableModel dm = (DefaultTableModel)jTable1.getModel();
+dm.getDataVector().removeAllElements();
+dm.fireTableDataChanged();

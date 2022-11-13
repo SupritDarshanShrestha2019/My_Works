@@ -1,0 +1,43 @@
+###############Code to Insert values into the derby database example############################################
+
+//add this import statement at the top of your java file
+import java.sql.*;
+
+try {
+//use the database connection statement for Java Derby databse
+//register is the java derby database name, cc and cc are the username and password
+            Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/register", "cc", "cc");
+
+// This is the connection statement for sqlite database
+//Don't forget to add sqlite jdbc driver in the library of your project
+//group.db is the sqlite database name
+//Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Sniper\\Desktop\\alldatabases\\group.db");
+
+            System.out.println("connected");
+
+//these are the values obtained from java form
+            String namex = jTextField1.getText();
+            String rollx = jTextField2.getText();
+
+//here we are preparing sql statement to insert above values in the database
+// name and roll are the columns in the table record
+            PreparedStatement st = conn.prepareStatement("Insert into record(name,roll) values (?,?)");
+            st.setString(1, namex);
+            st.setString(2, rollx);
+
+//this is the code to execute query to insert values
+            int a = st.executeUpdate();
+
+            if (a > 0) {
+                JOptionPane.showMessageDialog(null, "Data inserted to database");
+                jTextField1.setText("");
+                jTextField2.setText("");
+            }
+
+//this is the code to close sql statement and close sql connection as work is done , for better security
+	    st.close();
+	    conn.close();
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }

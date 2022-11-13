@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="734.0" prefWidth="1085.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AMS_Application_using_JavaFx_Using_Sqlite.Login.ShowTransactions.ShowTransactionController">
+   <children>
+      <Label fx:id="details" layoutX="49.0" layoutY="47.0" prefHeight="608.0" prefWidth="1003.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button layoutX="977.0" layoutY="673.0" mnemonicParsing="false" onAction="#show" text="Show">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="48.0" layoutY="673.0" mnemonicParsing="false" onAction="#returnBack" text="Return">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

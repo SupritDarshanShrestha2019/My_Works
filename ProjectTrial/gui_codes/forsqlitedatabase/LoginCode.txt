@@ -1,0 +1,38 @@
+//These are the entered username and password in the form
+        String myUserName = usernameTextField.getText();
+        String myPassword = jPasswordField1.getText();
+
+        try {
+            // this is the database connection
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:D:\\alldatabasefiles\\school.db");
+            System.out.println("connection successful");
+
+            // this is the preparation and execution of the sql statement
+            
+
+		//login is the table in the database
+            PreparedStatement st = conn.prepareStatement("select password from login where username = (?)");
+            st.setString(1, myUserName);
+
+            ResultSet rs = st.executeQuery();
+
+            String thePassword = rs.getString(1);
+
+            if (thePassword.equals(myPassword)) {
+                //System.out.println("Login Successful");
+                Home myhome = new Home();
+                myhome.setVisible(true);
+
+            } else {
+                // System.out.println("Password Mismatch");
+                JOptionPane.showMessageDialog(null, "username or password is wrong");
+
+            }
+		st.close();
+		conn.close();
+
+        } catch (Exception e) {
+
+            System.out.println(e);
+
+        }
